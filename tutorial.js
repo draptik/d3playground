@@ -1,18 +1,23 @@
 'use strict';
 
-/*var containerSelection = d3.select('#d3container');
+// https://www.dashingd3js.com/adding-an-svg-element
 
-var svgSelection = containerSelection.append("svg")
-  .attr("width", 50)
-  .attr("height", 50);
+/*
+var containerSelection = d3.select('#d3container');
 
-var circleSelection = svgSelection.append("circle")
-  .attr("cx", 25)
-  .attr("cy", 25)
-  .attr("r", 25)
-  .style("fill", "purple");
+var svgSelection = containerSelection.append('svg')
+  .attr('width', 50)
+  .attr('height', 50);
+
+var circleSelection = svgSelection.append('circle')
+  .attr('cx', 25)
+  .attr('cy', 25)
+  .attr('r', 25)
+  .style('fill', 'purple');
 */
 
+// https://www.dashingd3js.com/binding-data-to-dom-elements
+// https://www.dashingd3js.com/using-data-bound-to-dom-elements
 
 /*
 var theData = [1, 2, 3];
@@ -24,6 +29,7 @@ var p = d3.select('body').selectAll('p')
   .text(function (d, i) { return 'i = ' + i + ' d = ' + d; });
 */
 
+// https://www.dashingd3js.com/creating-svg-elements-based-on-data
 
 /*
 var circleRadii = [40, 20, 10];
@@ -286,3 +292,97 @@ var rectangleAttributes = rectangles
 
 // https://www.dashingd3js.com/d3js-scales
 
+/*
+var initialScaleData = [0, 1000, 3000, 2000, 5000, 4000, 7000, 6000, 9000, 8000, 10000];
+
+var newScaledData = [];
+var minDataPoint = d3.min(initialScaleData);
+var maxDataPoint = d3.max(initialScaleData);
+
+var linearScale = d3.scale.linear()
+  .domain([minDataPoint, maxDataPoint])
+  .range([0, 100]);
+
+for (var i = 0; i < initialScaleData.length; i++) {
+  newScaledData[i] = linearScale(initialScaleData[i]);
+}
+
+console.log(newScaledData);
+*/
+
+
+// https://www.dashingd3js.com/svg-group-element-and-d3js
+
+var circleData = [{
+  'cx': 20,
+  'cy': 20,
+  'radius': 20,
+  'color': 'green'
+}, {
+  'cx': 70,
+  'cy': 70,
+  'radius': 20,
+  'color': 'purple'
+}];
+
+
+var rectangleData = [{
+  'rx': 110,
+  'ry': 110,
+  'height': 30,
+  'width': 30,
+  'color': 'blue'
+}, {
+  'rx': 160,
+  'ry': 160,
+  'height': 30,
+  'width': 30,
+  'color': 'red'
+}];
+
+var svgContainer = d3.select('#d3container').append('svg')
+  .attr('width', 200)
+  .attr('height', 200);
+
+var circleGroup = svgContainer.append('g').attr('transform', 'translate(80,0)');
+
+var circles = circleGroup.selectAll('circle')
+  .data(circleData)
+  .enter()
+  .append('circle');
+
+var circleAttributes = circles
+  .attr('cx', function (d) {
+    return d.cx;
+  })
+  .attr('cy', function (d) {
+    return d.cy;
+  })
+  .attr('r', function (d) {
+    return d.radius;
+  })
+  .style('fill', function (d) {
+    return d.color;
+  });
+
+var rectangles = svgContainer.selectAll('rect')
+  .data(rectangleData)
+  .enter()
+  .append('rect');
+
+var rectangleAttributes = rectangles
+  .attr('x', function (d) {
+    return d.rx;
+  })
+  .attr('y', function (d) {
+    return d.ry;
+  })
+  .attr('height', function (d) {
+    return d.height;
+  })
+  .attr('width', function (d) {
+    return d.width;
+  })
+  .style('fill', function (d) {
+    return d.color;
+  });
