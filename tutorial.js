@@ -2,7 +2,7 @@
 
 // https://www.dashingd3js.com/adding-an-svg-element
 
-/*
+
 var containerSelection = d3.select('#d3container');
 
 var svgSelection = containerSelection.append('svg')
@@ -14,12 +14,12 @@ var circleSelection = svgSelection.append('circle')
   .attr('cy', 25)
   .attr('r', 25)
   .style('fill', 'purple');
-*/
+
 
 // https://www.dashingd3js.com/binding-data-to-dom-elements
 // https://www.dashingd3js.com/using-data-bound-to-dom-elements
 
-/*
+
 var theData = [1, 2, 3];
 
 var p = d3.select('body').selectAll('p')
@@ -27,11 +27,11 @@ var p = d3.select('body').selectAll('p')
   .enter()
   .append('p')
   .text(function (d, i) { return 'i = ' + i + ' d = ' + d; });
-*/
+
 
 // https://www.dashingd3js.com/creating-svg-elements-based-on-data
 
-/*
+
 var circleRadii = [40, 20, 10];
 
 var bodySelection = d3.select('#d3container');
@@ -63,12 +63,12 @@ var circleAttributes = circles
     }
     return returnColor;
   });
-*/
+
 
 
 //https://www.dashingd3js.com/using-the-svg-coordinate-space
 
-/*
+
 var spaceCircles = [30, 70, 110];
 
 var bodySelection = d3.select('#d3container');
@@ -102,13 +102,13 @@ var circleAttributes = circles
       }
       return returnColor;
     });
-*/
+
 
 
 // https://www.dashingd3js.com/data-structures-d3js-accepts
 // https://www.dashingd3js.com/using-json-to-simplify-code
 
-/*
+
 var jsonCircles = [{
   'x_axis': 30,
   'y_axis': 30,
@@ -151,12 +151,10 @@ var circleAttributes = circles
   .style('fill', function(d) {
     return d.color;
   });
-*/
 
 
 // https://www.dashingd3js.com/svg-basic-shapes-and-d3js
 
-/*
 var svgContainer = d3.select('#d3container').append('svg')
   .attr('width', 200)
   .attr('height', 200)
@@ -175,12 +173,10 @@ var line = svgContainer.append('line')
   .attr('y2', 110)
   .attr('stroke-width', 2)
   .attr('stroke', 'black');
-*/
 
 
 // https://www.dashingd3js.com/svg-paths-and-d3js
 
-/*
 var lineData = [{
   'x': 1,
   'y': 5
@@ -220,11 +216,9 @@ var lineGraph = svgContainer.append('path')
   .attr('stroke', 'blue')
   .attr('stroke-width', 2)
   .attr('fill', 'none');
-*/
 
 // https://www.dashingd3js.com/dynamic-svg-coordinate-space
 
-/*
 var jsonRectangles = [{
   'x_axis': 10,
   'y_axis': 10,
@@ -287,12 +281,10 @@ var rectangleAttributes = rectangles
   .style('fill', function (d) {
     return d.color;
   });
-*/
 
 
 // https://www.dashingd3js.com/d3js-scales
 
-/*
 var initialScaleData = [0, 1000, 3000, 2000, 5000, 4000, 7000, 6000, 9000, 8000, 10000];
 
 var newScaledData = [];
@@ -308,12 +300,10 @@ for (var i = 0; i < initialScaleData.length; i++) {
 }
 
 console.log(newScaledData);
-*/
 
 
 // https://www.dashingd3js.com/svg-group-element-and-d3js
 
-/*
 var circleData = [{
   'cx': 20,
   'cy': 20,
@@ -387,11 +377,9 @@ var rectangleAttributes = rectangles
   .style('fill', function (d) {
     return d.color;
   });
-*/
 
 // https://www.dashingd3js.com/svg-text-element
 
-/*
 var circleData = [{
   'cx': 20,
   'cy': 20,
@@ -445,11 +433,9 @@ var textLabels = text
   .attr('font-family', 'sans-serif')
   .attr('font-size', '20px')
   .attr('fill', 'red');
-*/
 
 // https://www.dashingd3js.com/d3js-axes
 
-/*
 var svgContainer = d3.select('body').append('svg')
   .attr('width', 400)
   .attr('height', 100);
@@ -463,4 +449,3 @@ var xAxis = d3.svg.axis()
 
 var xAxisGroup = svgContainer.append('g')
   .call(xAxis);
-*/

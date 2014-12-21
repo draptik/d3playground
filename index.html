@@ -9,9 +9,26 @@
 
   <h1>d3 demo</h1>
 
-  <div id="d3container"></div>
+  <div id="d3container" style="margin-left: 30px;"></div>
 
-  <script type="text/javascript" src="tutorial.js"></script>
+  <div id="checks">
+    Y-axis:<input type="checkbox" id="yChecked" checked/>
+  </div>
 
+  <div id="dragdiv" style="margin-left: 30px;"></div>
+
+  <script>
+  $('#yChecked').click(function() {
+    dragbartop
+    .attr("fill-opacity", (0.5))
+    .attr("cursor", ("ns-resize"));
+    dragbarbottom
+    .attr("fill-opacity", (0.5))
+    .attr("cursor", ("ns-resize"));
+  });
+  </script>
+
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="dragrect.js"></script>
 </body>
 </html>
